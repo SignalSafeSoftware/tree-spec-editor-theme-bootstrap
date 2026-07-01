@@ -1,0 +1,43 @@
+/**
+ * Semantic list and canvas selection styling.
+ */
+
+.graph-editor-list__item--selected,
+.graph-editor-list__item-text--selected {
+    background: var(--bs-primary-bg-subtle) !important;
+    color: var(--bs-emphasis-color) !important;
+}
+
+.graph-editor-list__item--selected .graph-editor-muted,
+.graph-editor-list__item--selected .graph-editor-badge {
+    color: var(--bs-emphasis-color);
+}
+
+.graph-editor-list__item--selected .graph-editor-btn:not(.graph-editor-btn--danger),
+.graph-editor-list__item--selected p,
+.graph-editor-list__item--selected small,
+.graph-editor-list__item--selected span:not(.graph-editor-badge) {
+    color: var(--bs-emphasis-color) !important;
+}
+
+.graph-editor-canvas__selected,
+.graph-editor-canvas-selected {
+    background: var(--bs-primary-bg-subtle) !important;
+    color: var(--bs-emphasis-color) !important;
+}
+
+.graph-editor-canvas__selected .graph-editor-muted,
+.graph-editor-canvas-selected .graph-editor-muted {
+    color: var(--bs-emphasis-color);
+    opacity: 1;
+}
+
+.graph-editor-canvas-choice-selected,
+.graph-editor-canvas__selected.graph-editor-choice-row {
+    background: var(--bs-primary-bg-subtle) !important;
+    color: var(--bs-emphasis-color) !important;
+}
+
+.graph-editor-canvas-choice-selected span:not(.badge) {
+    color: var(--bs-emphasis-color) !important;
+}

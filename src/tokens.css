@@ -1,0 +1,30 @@
+/**
+ * Design tokens on .graph-editor-root — map to active Bootstrap/Bootswatch theme.
+ */
+
+.graph-editor-root,
+.graph-editor-toolbar {
+    min-width: 0;
+}
+
+.graph-editor-root {
+    --graph-editor-bg: var(--bs-body-bg);
+    --graph-editor-text: var(--bs-body-color);
+    --graph-editor-muted: var(--bs-secondary-color);
+    --graph-editor-panel-bg: var(--bs-tertiary-bg);
+    --graph-editor-border: var(--bs-border-color);
+    --graph-editor-border-subtle: var(--bs-border-color-translucent);
+    --graph-editor-accent: var(--bs-primary);
+    --graph-editor-danger: var(--bs-danger);
+    --graph-editor-success: var(--bs-success);
+    --graph-editor-radius: var(--bs-border-radius);
+    --graph-editor-border-width: var(--bs-border-width);
+    --graph-editor-node-border-width: 4px;
+    --graph-editor-icon-size: 1.35rem;
+    --graph-editor-icon-button-size: 1.35rem;
+
+    font-family: var(--bs-body-font-family);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--graph-editor-text);
+}

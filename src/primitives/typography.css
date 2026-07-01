@@ -1,0 +1,23 @@
+/**
+ * Text utilities and monospace.
+ */
+
+.graph-editor-text--semibold { font-weight: 600; }
+.graph-editor-text--bold { font-weight: 700; }
+.graph-editor-text--medium { font-weight: 500; }
+.graph-editor-text--sm { font-size: 0.875rem; }
+.graph-editor-text--md { font-size: 1rem; }
+.graph-editor-text--xs { font-size: 0.75rem; }
+.graph-editor-text--uppercase { text-transform: uppercase; }
+.graph-editor-text--start { text-align: start; }
+.graph-editor-text--end { text-align: end; }
+.graph-editor-text--break { overflow-wrap: anywhere; }
+.graph-editor-text--danger { color: var(--graph-editor-danger); }
+
+.graph-editor-mono {
+    font-family: var(--bs-font-monospace, monospace);
+}
+
+.graph-editor-align-top {
+    vertical-align: top;
+}

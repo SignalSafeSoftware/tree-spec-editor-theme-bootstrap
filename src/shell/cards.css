@@ -1,0 +1,42 @@
+/**
+ * Card chrome for panels, inspector, and modals.
+ */
+
+.graph-editor-card {
+    border: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    border-radius: var(--graph-editor-radius);
+    background: var(--graph-editor-bg);
+}
+
+.graph-editor-card__header {
+    padding: 0.5rem 0.75rem;
+    border-bottom: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    background: var(--graph-editor-panel-bg);
+    font-weight: 600;
+}
+
+.graph-editor-card__body {
+    padding: 0.75rem;
+}
+
+.graph-editor-card__footer {
+    padding: 0.5rem 0.75rem;
+    border-top: var(--graph-editor-border-width) solid var(--graph-editor-border);
+}
+
+.graph-editor-card__body--flush {
+    padding: 0;
+}
+
+.graph-editor-card__header.graph-editor-flex--between,
+.graph-editor-card__header.graph-editor-flex--row {
+    align-items: center;
+}
+
+.graph-editor-card__section {
+    padding: 0.75rem;
+}
+
+.graph-editor-card__section--border-top {
+    border-top: var(--graph-editor-border-width) solid var(--graph-editor-border);
+}

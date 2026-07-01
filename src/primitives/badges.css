@@ -1,0 +1,69 @@
+/**
+ * Badges and validation alerts.
+ */
+
+.graph-editor-badge {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--bs-border-radius-sm, 0.25rem);
+}
+
+.graph-editor-badge--error {
+    background: var(--graph-editor-danger);
+    color: #fff;
+}
+
+.graph-editor-badge--warning {
+    background: var(--bs-warning);
+    color: #000;
+}
+
+.graph-editor-badge--info {
+    background: var(--bs-info);
+    color: #000;
+}
+
+.graph-editor-badge--secondary {
+    background: var(--bs-secondary);
+    color: #fff;
+}
+
+.graph-editor-badge--neutral {
+    background: var(--bs-secondary-bg);
+    color: var(--graph-editor-text);
+}
+
+.graph-editor-badge--success {
+    background: var(--graph-editor-success);
+    color: #fff;
+}
+
+.graph-editor-badge--danger {
+    background: var(--graph-editor-danger);
+    color: #fff;
+}
+
+.graph-editor-alert {
+    padding: 0.75rem 1rem;
+    border-radius: var(--graph-editor-radius);
+    border: var(--graph-editor-border-width) solid transparent;
+    margin-bottom: 0.75rem;
+}
+
+.graph-editor-alert--danger {
+    color: var(--bs-danger-text-emphasis, #58151c);
+    background: var(--bs-danger-bg-subtle, #f8d7da);
+    border-color: var(--bs-danger-border-subtle, #f1aeb5);
+}
+
+.graph-editor-alert--warning {
+    color: var(--bs-warning-text-emphasis, #664d03);
+    background: var(--bs-warning-bg-subtle, #fff3cd);
+    border-color: var(--bs-warning-border-subtle, #ffe69c);
+}
+
+.graph-editor-muted {
+    color: var(--graph-editor-muted);
+}

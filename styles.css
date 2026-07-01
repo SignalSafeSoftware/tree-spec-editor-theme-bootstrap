@@ -1,0 +1,19 @@
+/**
+ * @signalsafe/tree-spec-editor-theme-bootstrap
+ * Import after Bootstrap/Bootswatch so --bs-* variables resolve.
+ */
+@import './src/tokens.css';
+@import './src/primitives/buttons.css';
+@import './src/primitives/forms.css';
+@import './src/primitives/lists.css';
+@import './src/primitives/badges.css';
+@import './src/primitives/typography.css';
+@import './src/primitives/surfaces.css';
+@import './src/primitives/spacing.css';
+@import './src/primitives/flex.css';
+@import './src/shell/toolbar.css';
+@import './src/shell/cards.css';
+@import './src/shell/modals.css';
+@import './src/shell/panels.css';
+@import './src/shell/dropdowns.css';
+@import './src/shell/selection.css';

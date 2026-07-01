@@ -1,0 +1,38 @@
+/**
+ * Info panel property table and panel utilities.
+ */
+
+.graph-editor-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.graph-editor-table td {
+    padding: 0.5rem 0.75rem;
+    border-top: var(--graph-editor-border-width) solid var(--graph-editor-border-subtle);
+    vertical-align: top;
+}
+
+.graph-editor-table tbody tr:first-child td {
+    border-top: 0;
+}
+
+.graph-editor-table tbody tr:nth-child(odd) {
+    background-color: var(--graph-editor-panel-bg);
+}
+
+.graph-editor-table tbody tr:nth-child(even) {
+    background-color: var(--graph-editor-bg);
+}
+
+.graph-editor-table tbody tr:hover {
+    background-color: var(
+        --bs-table-hover-bg,
+        color-mix(in srgb, var(--bs-emphasis-color, #000) 7.5%, var(--graph-editor-panel-bg))
+    );
+}
+
+.graph-editor-table td:first-child {
+    width: 38%;
+    border-right: var(--graph-editor-border-width) solid var(--graph-editor-border-subtle);
+}

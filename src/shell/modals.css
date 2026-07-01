@@ -1,0 +1,53 @@
+/**
+ * Modal overlay and dialog chrome.
+ */
+
+.graph-editor-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.graph-editor-modal__dialog {
+    width: 100%;
+    max-width: 520px;
+    margin: 1rem;
+}
+
+.graph-editor-modal__content {
+    background: var(--graph-editor-bg);
+    border: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    border-radius: var(--bs-border-radius-lg, 0.5rem);
+    box-shadow: var(--bs-box-shadow-lg, 0 1rem 3rem rgba(0, 0, 0, 0.175));
+}
+
+.graph-editor-modal__header,
+.graph-editor-modal__footer {
+    padding: 0.75rem 1rem;
+    border-color: var(--graph-editor-border);
+}
+
+.graph-editor-modal__header {
+    border-bottom: var(--graph-editor-border-width) solid var(--graph-editor-border);
+}
+
+.graph-editor-modal__footer {
+    border-top: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.graph-editor-modal__body {
+    padding: 1rem;
+}
+
+.graph-editor-modal__title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}

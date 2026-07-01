@@ -1,0 +1,113 @@
+/**
+ * Toolbar shell and toolbar-scoped buttons (no icon pseudo-element hacks).
+ */
+
+.graph-editor-root .graph-editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--graph-editor-border);
+    background: var(--graph-editor-bg);
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn,
+.graph-editor-root .graph-editor-toolbar summary.graph-editor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.375rem 0.65rem;
+    border: 1px solid var(--graph-editor-border);
+    border-radius: var(--graph-editor-radius);
+    background: var(--graph-editor-bg);
+    color: var(--graph-editor-text);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn:hover:not(:disabled):not(.graph-editor-btn--disabled),
+.graph-editor-root .graph-editor-toolbar summary.graph-editor-btn:hover:not(.graph-editor-btn--disabled) {
+    background: var(--graph-editor-panel-bg);
+    border-color: var(--graph-editor-border);
+    color: var(--graph-editor-text);
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn:disabled,
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn--disabled,
+.graph-editor-root .graph-editor-toolbar summary.graph-editor-btn.graph-editor-btn--disabled {
+    opacity: 0.55;
+    background: var(--graph-editor-bg);
+    border-color: var(--graph-editor-border);
+    color: var(--graph-editor-muted);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn--primary {
+    background: var(--graph-editor-accent);
+    border-color: var(--graph-editor-accent);
+    color: #fff;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn--primary:hover:not(:disabled):not(.graph-editor-btn--disabled) {
+    background: var(--graph-editor-accent);
+    border-color: var(--graph-editor-accent);
+    color: #fff;
+    filter: brightness(0.95);
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn--success {
+    background: var(--graph-editor-success);
+    border-color: var(--graph-editor-success);
+    color: #fff;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-btn--success:hover:not(:disabled):not(.graph-editor-btn--disabled) {
+    background: var(--graph-editor-success);
+    border-color: var(--graph-editor-success);
+    color: #fff;
+    filter: brightness(0.95);
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-dropdown > summary {
+    list-style: none;
+}
+
+.graph-editor-root .graph-editor-toolbar .graph-editor-dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.graph-editor-root .graph-editor-btn--neutral,
+.graph-editor-root .graph-editor-btn--neutral-outline {
+    background-color: var(--graph-editor-bg);
+    border-color: var(--graph-editor-border);
+    color: var(--graph-editor-text);
+}
+
+.graph-editor-root .graph-editor-btn--neutral:hover:not(:disabled),
+.graph-editor-root .graph-editor-btn--neutral-outline:hover:not(:disabled) {
+    background-color: var(--graph-editor-panel-bg);
+    border-color: var(--graph-editor-border);
+    color: var(--graph-editor-text);
+}
+
+.graph-editor-root .graph-editor-toolbar__text {
+    color: var(--graph-editor-muted);
+}

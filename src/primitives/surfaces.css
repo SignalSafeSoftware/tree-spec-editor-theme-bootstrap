@@ -1,0 +1,15 @@
+/**
+ * Background surface modifiers.
+ */
+
+.graph-editor-surface--muted {
+    background: var(--graph-editor-panel-bg);
+}
+
+.graph-editor-surface--light {
+    background: var(--graph-editor-bg);
+}
+
+.graph-editor-shadow--sm {
+    box-shadow: var(--bs-box-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
+}

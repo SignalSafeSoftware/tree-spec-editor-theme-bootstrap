@@ -1,0 +1,76 @@
+/**
+ * Form fields and checkboxes.
+ */
+
+.graph-editor-root .graph-editor-input,
+.graph-editor-root .graph-editor-select,
+.graph-editor-root .graph-editor-textarea {
+    font-size: 0.875rem;
+}
+
+.graph-editor-root .graph-editor-field__label {
+    font-size: 0.875rem;
+}
+
+.graph-editor-field {
+    margin-bottom: 0.75rem;
+}
+
+.graph-editor-field__label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.graph-editor-input,
+.graph-editor-select,
+.graph-editor-textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--graph-editor-text);
+    background: var(--graph-editor-bg);
+    border: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    border-radius: var(--graph-editor-radius);
+}
+
+.graph-editor-input:focus,
+.graph-editor-select:focus,
+.graph-editor-textarea:focus {
+    outline: 0;
+    border-color: var(--graph-editor-accent);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.graph-editor-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    cursor: pointer;
+}
+
+.graph-editor-checkbox--switch input {
+    margin: 0;
+}
+
+.graph-editor-input--list-search {
+    margin-bottom: 0.5rem;
+}
+
+.graph-editor-root .graph-editor-input:disabled,
+.graph-editor-root .graph-editor-select:disabled,
+.graph-editor-root .graph-editor-textarea:disabled {
+    background-color: var(--graph-editor-panel-bg);
+    color: var(--graph-editor-muted);
+    border-color: var(--graph-editor-border-subtle);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.graph-editor-root .graph-editor-checkbox--switch input:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
