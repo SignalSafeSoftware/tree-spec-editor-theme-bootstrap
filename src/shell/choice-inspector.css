@@ -1,0 +1,20 @@
+/**
+ * Choices inspector panel row layout (Type/Outcome fields + move/delete actions).
+ */
+
+.graph-editor-choice-inspector-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.graph-editor-choice-inspector-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    align-self: flex-end;
+    min-height: calc(0.375rem * 2 + 1rem * 1.5 + 2px);
+    padding: 0;
+    margin: 0;
+    border: 0;
+}

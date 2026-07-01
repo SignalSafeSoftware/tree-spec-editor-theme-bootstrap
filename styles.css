@@ -17,6 +17,7 @@
 @import './src/shell/panels.css';
 @import './src/shell/dropdowns.css';
 @import './src/shell/selection.css';
+@import './src/shell/choice-inspector.css';
 @import './src/shell/icons.css';
 @import './src/canvas/react-flow.css';
 @import './src/canvas/nodes.css';
