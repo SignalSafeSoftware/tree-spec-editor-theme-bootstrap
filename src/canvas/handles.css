@@ -1,0 +1,50 @@
+/**
+ * Invisible React Flow connection handles and target-handle tone modifiers.
+ */
+
+.graph-editor-canvas .graph-editor-handle {
+    opacity: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.graph-editor-handle {
+    width: 10px;
+    height: 10px;
+}
+
+.graph-editor-root .graph-editor-choice-handle,
+.graph-editor-root .graph-editor-target-handle {
+    width: 1px !important;
+    height: 1px !important;
+    min-width: 1px !important;
+    min-height: 1px !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.graph-editor-root .graph-editor-choice-handle {
+    position: absolute !important;
+    top: 50% !important;
+    right: calc(-1px - var(--graph-editor-node-border-width, 4px) / 2) !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+}
+
+.graph-editor-root .graph-editor-target-handle {
+    top: 50% !important;
+    left: calc(-1px - var(--graph-editor-node-border-width, 4px) / 2) !important;
+    transform: translateY(-50%) !important;
+}
+
+.graph-editor-root .graph-editor-target-handle--default,
+.graph-editor-root .graph-editor-target-handle--danger {
+    opacity: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}

@@ -21,6 +21,10 @@ const required = [
     'src/shell/panels.css',
     'src/shell/dropdowns.css',
     'src/shell/selection.css',
+    'src/canvas/react-flow.css',
+    'src/canvas/nodes.css',
+    'src/canvas/choices.css',
+    'src/canvas/handles.css',
 ];
 
 for (const file of required) {

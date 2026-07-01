@@ -1,0 +1,99 @@
+/**
+ * Canvas node cards, text truncation, and flush choice lists.
+ */
+
+.graph-editor-node-text-wrap {
+    overflow-wrap: anywhere;
+}
+
+.graph-editor-node-text-truncate {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.graph-editor-node-flex-truncate {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.graph-editor-canvas-node {
+    min-width: 0;
+    border-radius: var(--bs-card-border-radius, var(--graph-editor-radius));
+    overflow: visible;
+    border-style: solid;
+    border-width: var(--graph-editor-node-border-width);
+}
+
+.graph-editor-canvas-node--border-danger {
+    border-color: var(--graph-editor-danger) !important;
+}
+
+.graph-editor-canvas-node--border-warning {
+    border-color: var(--bs-warning) !important;
+}
+
+.graph-editor-canvas-node--end-width {
+    width: 180px;
+}
+
+.graph-editor-canvas-node > .graph-editor-card__header:first-child {
+    border-top-left-radius: calc(var(--bs-card-border-radius, var(--graph-editor-radius)) - 1px);
+    border-top-right-radius: calc(var(--bs-card-border-radius, var(--graph-editor-radius)) - 1px);
+}
+
+.graph-editor-canvas-node-body {
+    min-width: 0;
+}
+
+.graph-editor-canvas-node .graph-editor-card__body {
+    min-width: 0;
+    background-color: transparent;
+}
+
+.graph-editor-canvas-node .graph-editor-list__item {
+    background-color: transparent;
+}
+
+.graph-editor-list--flush {
+    border-radius: 0;
+}
+
+.graph-editor-list--flush > .graph-editor-list__item {
+    border-left: 0;
+    border-right: 0;
+}
+
+.graph-editor-canvas-node .graph-editor-list__item--plain {
+    padding: 0;
+    border-top: var(--graph-editor-border-width) solid
+        var(--graph-editor-border-subtle);
+}
+
+.graph-editor-canvas-node .graph-editor-list--flush > .graph-editor-list__item--plain:first-child {
+    border-top: 0;
+}
+
+.graph-editor-canvas-node .graph-editor-canvas-node-body > .graph-editor-list--flush {
+    border-top: var(--graph-editor-border-width) solid var(--graph-editor-border-subtle);
+}
+
+.graph-editor-canvas-node.graph-editor-canvas__selected
+    .graph-editor-canvas-node-body
+    > .graph-editor-list--flush,
+.graph-editor-canvas-selected.graph-editor-canvas-node
+    .graph-editor-canvas-node-body
+    > .graph-editor-list--flush {
+    border-top-color: var(--bs-primary-border-subtle);
+}
+
+.graph-editor-canvas-node.graph-editor-canvas__selected .graph-editor-card__header,
+.graph-editor-canvas-node.graph-editor-canvas__selected .graph-editor-list__item {
+    border-color: var(--bs-primary-border-subtle);
+}

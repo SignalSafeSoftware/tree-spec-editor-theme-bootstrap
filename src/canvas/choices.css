@@ -1,0 +1,73 @@
+/**
+ * Canvas choice rows, drag/drop affordances, and append targets.
+ */
+
+.graph-editor-canvas-node .graph-editor-choice-row {
+    padding: 0.3125rem 0.5rem;
+}
+
+.graph-editor-choice-row {
+    position: relative;
+    min-width: 0;
+}
+
+.graph-editor-choice-row-selectable {
+    cursor: pointer;
+}
+
+.graph-editor-choice-row-select {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-decoration: none;
+}
+
+.graph-editor-choice-row-select:not(:disabled):hover,
+.graph-editor-choice-row-select:not(:disabled):focus-visible {
+    color: inherit;
+    text-decoration: none;
+}
+
+.graph-editor-choice-row-selectable:not(:disabled):focus-visible {
+    outline: 2px solid var(--graph-editor-accent);
+    outline-offset: -2px;
+}
+
+.graph-editor-choice-drag-handle {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 0.625rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: grab;
+    touch-action: none;
+    color: var(--graph-editor-muted);
+    line-height: 1;
+    font-size: 0.75rem;
+}
+
+.graph-editor-choice-drag-handle:active {
+    cursor: grabbing;
+}
+
+.graph-editor-choice-drop-target {
+    outline: 2px dashed var(--graph-editor-accent);
+    outline-offset: -2px;
+    background-color: var(--bs-primary-bg-subtle);
+}
+
+.graph-editor-choice-drop-append,
+.graph-editor-list__append-target {
+    min-height: 0.5rem;
+}

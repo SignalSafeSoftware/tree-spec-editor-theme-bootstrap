@@ -1,0 +1,84 @@
+/**
+ * Canvas root, React Flow chrome, and dark-mode sync.
+ */
+
+.graph-editor-canvas-root {
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+/* NodeResizer: invisible edge hit targets with resize cursors (square line frame stays hidden). */
+.graph-editor-canvas .react-flow__node .react-flow__resize-control {
+    z-index: 5;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.line {
+    opacity: 0;
+    border-color: transparent;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.left,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.right {
+    cursor: ew-resize;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.top,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.bottom {
+    cursor: ns-resize;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.top.left,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.bottom.right {
+    cursor: nwse-resize;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.bottom.left,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.top.right {
+    cursor: nesw-resize;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.line.left,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.line.right {
+    width: 10px;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.line.top,
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.bottom {
+    height: 10px;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.handle {
+    width: 10px;
+    height: 10px;
+    border: none;
+    background: transparent;
+    opacity: 0;
+}
+
+.graph-editor-canvas .react-flow__node .react-flow__resize-control.handle:hover {
+    opacity: 1;
+    border: 1px solid var(--graph-editor-accent);
+    border-radius: 2px;
+    background-color: var(--bs-primary-bg-subtle);
+}
+
+.graph-editor-canvas .react-flow__node:has(.graph-editor-canvas-node),
+.graph-editor-canvas .react-flow__node:has(.graph-editor-canvas-node--border-danger) {
+    overflow: visible;
+}
+
+/* React Flow canvas theme sync (RF v11 — host passes colorMode from ThemeContext). */
+.graph-editor-canvas[data-color-mode='dark'] .react-flow__background {
+    background-color: var(--graph-editor-bg);
+}
+
+.graph-editor-canvas[data-color-mode='dark'] .react-flow__controls-button {
+    background: var(--bs-secondary-bg);
+    border-color: var(--graph-editor-border);
+    color: var(--graph-editor-text);
+    fill: currentColor;
+}
+
+.graph-editor-canvas[data-color-mode='dark'] .react-flow__minimap {
+    background: var(--bs-secondary-bg);
+}
