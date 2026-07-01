@@ -1,0 +1,293 @@
+/**
+ * Bootstrap Icons via ::before on semantic icon/action classes from @signalsafe/tree-spec-editor@0.3.2+.
+ * Requires bootstrap-icons font in the host app.
+ */
+
+.graph-editor-root .graph-editor-btn--toolbar-add {
+    position: relative;
+    padding-left: 1.625rem;
+}
+
+.graph-editor-root summary.graph-editor-btn--toolbar-add,
+.graph-editor-root .graph-editor-btn.graph-editor-btn--toolbar-add {
+    position: relative;
+    padding-left: 1.625rem;
+}
+
+.graph-editor-root summary.graph-editor-btn--toolbar-add::before,
+.graph-editor-root .graph-editor-btn.graph-editor-btn--toolbar-add::before {
+    content: "\f4fe";
+    position: absolute;
+    left: 0.375rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: bootstrap-icons, sans-serif !important;
+    font-size: 0.875rem;
+    font-weight: normal !important;
+    line-height: 1;
+    color: var(--graph-editor-accent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.graph-editor-root summary.graph-editor-btn--toolbar-add.graph-editor-btn--disabled::before,
+.graph-editor-root .graph-editor-btn.graph-editor-btn--toolbar-add.graph-editor-btn--disabled::before,
+.graph-editor-root summary.graph-editor-btn--toolbar-add:disabled::before,
+.graph-editor-root .graph-editor-btn.graph-editor-btn--toolbar-add:disabled::before {
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-node,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--graph-editor-icon-button-size);
+    block-size: var(--graph-editor-icon-button-size);
+    min-inline-size: var(--graph-editor-icon-button-size);
+    min-block-size: var(--graph-editor-icon-button-size);
+    padding: 0 !important;
+    margin: 0;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand {
+    margin-inline-start: 0.375rem;
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-node::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand::before {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: bootstrap-icons, sans-serif !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    text-indent: 0;
+    font-size: var(--graph-editor-icon-size);
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-node::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice::before {
+    content: "\f4fe";
+    color: var(--graph-editor-accent);
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice.graph-editor-btn--disabled::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice:disabled::before {
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse::before {
+    content: "\f235";
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand::before {
+    content: "\f229";
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse:hover:not(:disabled):not(.graph-editor-btn--disabled)::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand:hover:not(:disabled):not(.graph-editor-btn--disabled)::before {
+    color: var(--graph-editor-text);
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-node:hover:not(:disabled):not(.graph-editor-btn--disabled)::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice:hover:not(:disabled):not(.graph-editor-btn--disabled)::before {
+    color: var(--graph-editor-accent);
+    opacity: 0.85;
+}
+
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-collapse:hover:not(:disabled):not(.graph-editor-btn--disabled),
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-expand:hover:not(:disabled):not(.graph-editor-btn--disabled),
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-node:hover:not(:disabled):not(.graph-editor-btn--disabled),
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--panel-add-choice:hover:not(:disabled):not(.graph-editor-btn--disabled) {
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.85;
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--graph-editor-icon-button-size);
+    block-size: var(--graph-editor-icon-button-size);
+    min-inline-size: var(--graph-editor-icon-button-size);
+    min-block-size: var(--graph-editor-icon-button-size);
+    padding: 0 !important;
+    margin: 0;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node {
+    align-self: flex-start;
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node::before {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: bootstrap-icons, sans-serif !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    text-indent: 0;
+    content: "\f5de";
+    font-size: var(--graph-editor-icon-size);
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--graph-editor-danger);
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node:hover:not(:disabled):not(.graph-editor-btn--disabled)::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node:hover:not(:disabled):not(.graph-editor-btn--disabled)::before {
+    color: var(--graph-editor-danger);
+    opacity: 0.85;
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node:disabled::before,
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node.graph-editor-btn--disabled::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node:disabled::before,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node.graph-editor-btn--disabled::before {
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node:disabled,
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node.graph-editor-btn--disabled,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node:disabled,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node.graph-editor-btn--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node.graph-editor-btn--disabled:hover,
+.graph-editor-root .graph-editor-list .graph-editor-btn--delete-node:disabled:hover,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node.graph-editor-btn--disabled:hover,
+.graph-editor-root .graph-editor-card__header .graph-editor-btn--delete-node:disabled:hover {
+    background: transparent !important;
+    opacity: 0.55;
+}
+
+.graph-editor-root .graph-editor-action-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--graph-editor-icon-button-size);
+    block-size: var(--graph-editor-icon-button-size);
+    min-inline-size: var(--graph-editor-icon-button-size);
+    min-block-size: var(--graph-editor-icon-button-size);
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.graph-editor-root .graph-editor-action-icon::before {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: bootstrap-icons, sans-serif !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    font-size: var(--graph-editor-icon-size);
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-action-icon--move-up::before {
+    content: "\f148";
+}
+
+.graph-editor-root .graph-editor-action-icon--move-down::before {
+    content: "\f128";
+}
+
+.graph-editor-root .graph-editor-action-icon--delete::before,
+.graph-editor-root .graph-editor-action-icon--danger::before {
+    content: "\f5de";
+    color: var(--graph-editor-danger);
+}
+
+.graph-editor-root .graph-editor-action-icon--delete.graph-editor-action-icon--disabled::before,
+.graph-editor-root .graph-editor-action-icon--danger.graph-editor-action-icon--disabled::before {
+    color: var(--graph-editor-muted);
+}
+
+.graph-editor-root .graph-editor-action-icon:hover:not(.graph-editor-action-icon--disabled) {
+    opacity: 0.85;
+}
+
+.graph-editor-root .graph-editor-action-icon--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.graph-editor-list__item--with-delete > .graph-editor-flex--between {
+    align-items: flex-start;
+}
+
+.graph-editor-list__item--selected .graph-editor-btn--delete-node::before,
+.graph-editor-list__item--selected .graph-editor-btn--icon.graph-editor-btn--danger::before {
+    color: var(--graph-editor-danger) !important;
+}
+
+.graph-editor-list__item--selected .graph-editor-btn--delete-node:disabled::before,
+.graph-editor-list__item--selected .graph-editor-btn--delete-node.graph-editor-btn--disabled::before {
+    color: var(--graph-editor-muted) !important;
+}
+
+.graph-editor-empty-state {
+    font-size: 0.875rem;
+    text-align: start;
+}

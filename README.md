@@ -15,8 +15,9 @@ Host apps may keep a thin bridge stylesheet for DeliveryPlus-specific layout, re
 ## What this package includes
 
 - **Slice 1:** design tokens on `.graph-editor-root`, primitives (buttons, forms, lists, badges, spacing, typography, surfaces, flex), and shell chrome (toolbar, cards, modals, panels, dropdowns, selection).
-- **Slice 2 (current):** canvas and React Flow styling (`graph-editor-canvas*`, node cards, choice rows, handles).
-- **Not included yet:** aria-label icon bridges or DeliveryPlus page/read-only/injected-form bridges.
+- **Slice 2:** canvas and React Flow styling (`graph-editor-canvas*`, node cards, choice rows, handles).
+- **Slice 3 (current):** Bootstrap Icons via semantic icon/action classes (`graph-editor-btn--toolbar-add`, panel add/collapse/delete, choice action icons).
+- **Not included yet:** DeliveryPlus page/read-only/injected-form bridges.
 
 ## Requirements
 
