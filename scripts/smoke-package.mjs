@@ -44,4 +44,14 @@ for (const file of required.slice(1)) {
     }
 }
 
+const tokens = readFileSync(join(root, 'src/tokens.css'), 'utf8');
+if (!tokens.includes('.graph-editor-canvas-root')) {
+    throw new Error('tokens.css must support standalone graph-editor-canvas-root usage');
+}
+
+const handles = readFileSync(join(root, 'src/canvas/handles.css'), 'utf8');
+if (!handles.includes('.graph-editor-canvas .graph-editor-choice-handle')) {
+    throw new Error('handles.css must scope choice handles to the standalone canvas');
+}
+
 console.log('tree-spec-editor-theme-bootstrap smoke:package OK');

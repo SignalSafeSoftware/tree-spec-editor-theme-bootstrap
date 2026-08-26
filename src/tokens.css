@@ -3,11 +3,13 @@
  */
 
 .graph-editor-root,
+.graph-editor-canvas-root,
 .graph-editor-toolbar {
     min-width: 0;
 }
 
-.graph-editor-root {
+.graph-editor-root,
+.graph-editor-canvas-root {
     --graph-editor-bg: var(--bs-body-bg);
     --graph-editor-text: var(--bs-body-color);
     --graph-editor-muted: var(--bs-secondary-color);

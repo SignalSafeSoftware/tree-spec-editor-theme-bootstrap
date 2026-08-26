@@ -7,6 +7,22 @@
     flex: 1 1 auto;
 }
 
+.graph-editor-canvas {
+    color: var(--graph-editor-text);
+    font-family: var(--bs-body-font-family, system-ui, sans-serif);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.graph-editor-canvas .react-flow__edge-text {
+    fill: var(--graph-editor-text);
+    font-family: inherit;
+}
+
+.graph-editor-canvas .react-flow__edge-textbg {
+    fill: var(--graph-editor-bg);
+}
+
 /* NodeResizer: invisible edge hit targets with resize cursors (square line frame stays hidden). */
 .graph-editor-canvas .react-flow__node .react-flow__resize-control {
     z-index: 5;
