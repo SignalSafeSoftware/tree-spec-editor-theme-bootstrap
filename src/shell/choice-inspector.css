@@ -18,3 +18,30 @@
     margin: 0;
     border: 0;
 }
+
+.graph-editor-choice-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.25rem 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.graph-editor-choice-toggle::before {
+    content: "\25B8";
+    transition: transform 0.15s ease;
+}
+
+.graph-editor-choice-toggle[aria-expanded="true"] {
+    margin-bottom: 0.5rem;
+}
+
+.graph-editor-choice-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
