@@ -4,11 +4,13 @@
 
 .graph-editor-table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
 }
 
 .graph-editor-table td {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem min(0.75rem, 3%);
+    overflow-wrap: anywhere;
     border-top: var(--graph-editor-border-width) solid var(--graph-editor-border-subtle);
     vertical-align: top;
 }
