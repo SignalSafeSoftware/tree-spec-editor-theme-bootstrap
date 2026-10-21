@@ -1,26 +1,9 @@
 /** Browser-only development regression. Uses a supplied Playwright installation. */
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
-import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { writeFile } from 'node:fs/promises';
+import { browserLayout } from './browser-layout.mjs';
 
-const [playwrightPath, packagePath, outputPath] = process.argv.slice(2);
-if (!playwrightPath || !packagePath) {
-    throw new Error('Usage: node scripts/check-info-layout.mjs /path/to/playwright/index.mjs /path/to/installed/theme [result.json]');
-}
-const { chromium } = await import(pathToFileURL(path.resolve(playwrightPath)).href);
-async function styles(filename) {
-    const source = await readFile(filename, 'utf8');
-    const imports = [...source.matchAll(/@import\s+['"]([^'"]+)['"];?/g)];
-    let result = source;
-    for (const match of imports) {
-        result = result.replace(match[0], await styles(path.resolve(path.dirname(filename), match[1])));
-    }
-    return result;
-}
-const css = await styles(path.resolve(packagePath, 'styles.css'));
-const browser = await chromium.launch({ headless: true });
-const page = await browser.newPage();
+const { browser, page, css, outputPath } = await browserLayout('check-choice-header-layout.mjs');
 const results = [];
 try {
     for (const width of [320, 430, 1280]) for (const fontSize of [16, 32]) for (const disabled of [false, true]) {
