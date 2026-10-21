@@ -4,7 +4,18 @@
 
 .graph-editor-choice-inspector-header {
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 0.75rem;
+}
+
+/* Allow fields and actions to take separate rows before values collapse. */
+.graph-editor-choice-inspector-header > .graph-editor-flex {
+    flex: 1 1 16rem;
+    flex-wrap: wrap;
+}
+
+.graph-editor-choice-inspector-header .graph-editor-field {
+    flex: 1 1 9rem;
 }
 
 .graph-editor-choice-inspector-actions {
@@ -44,4 +55,9 @@
 
 .graph-editor-choice-toggle[aria-expanded="true"]::before {
     transform: rotate(90deg);
+}
+
+/* Keep nested choice insets proportional when enlarged text narrows the card. */
+.graph-editor-list__item--choice-inspector {
+    padding-inline: min(0.75rem, 3%);
 }

@@ -1,27 +1,39 @@
 {
-  "name": "@signalsafe/tree-spec-editor-theme-bootstrap",
-  "version": "0.3.4",
-  "type": "module",
-  "description": "Bootstrap-token theme for @signalsafe/tree-spec-editor semantic classes.",
-  "license": "MIT",
-  "sideEffects": ["*.css", "**/*.css"],
-  "exports": {
-    "./styles.css": "./styles.css"
-  },
-  "files": ["styles.css", "src/**/*.css", "README.md", "LICENSE"],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "smoke:package": "node scripts/smoke-package.mjs",
-    "publish:dry-run": "npm pack --dry-run"
-  },
-  "keywords": [
-    "tree-spec",
-    "graph-editor",
-    "theme",
-    "css",
-    "bootstrap",
-    "signalsafe"
-  ]
+    "name": "@signalsafe/tree-spec-editor-theme-bootstrap",
+    "version": "0.3.7",
+    "type": "module",
+    "description": "Bootstrap-token theme for @signalsafe/tree-spec-editor semantic classes.",
+    "license": "MIT",
+    "sideEffects": [
+        "*.css",
+        "**/*.css"
+    ],
+    "exports": {
+        "./styles.css": "./styles.css"
+    },
+    "files": [
+        "styles.css",
+        "src/**/*.css",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md",
+        "RELEASING.md",
+        "docs/README.md",
+        "docs/current-release-candidate.md"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "smoke:package": "node scripts/smoke-package.mjs",
+        "publish:dry-run": "npm pack --dry-run"
+    },
+    "keywords": [
+        "tree-spec",
+        "graph-editor",
+        "theme",
+        "css",
+        "bootstrap",
+        "signalsafe"
+    ]
 }

@@ -57,10 +57,7 @@ jobs:
         name: Publish
         needs: [checks, smoke-package]
         if: |
-            (
-              (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
-              (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v'))
-            ) &&
+            github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') &&
             needs.checks.result == 'success' &&
             needs.smoke-package.result == 'success'
         runs-on: ubuntu-latest
@@ -77,6 +74,25 @@ jobs:
             - name: Check package version
               run: node -e "const p=require('./package.json'); console.log(p.name, p.version)"
 
+            - name: Pack approved artifact
+              run: npm pack --ignore-scripts --json > "$RUNNER_TEMP/approved-pack.json"
+            - name: Verify exact approved archive and version tag
+              id: artifact
+              run: |
+                  node --input-type=module <<'NODE'
+                  import assert from 'node:assert/strict';
+                  import { readFileSync, appendFileSync } from 'node:fs';
+                  import { createHash } from 'node:crypto';
+                  import process from 'node:process';
+                  const expected = JSON.parse(readFileSync('release-artifact.json', 'utf8'));
+                  const [packed] = JSON.parse(readFileSync(`${process.env.RUNNER_TEMP}/approved-pack.json`, 'utf8'));
+                  assert.equal(packed.name, expected.name);
+                  assert.equal(packed.version, expected.version);
+                  assert.equal(process.env.GITHUB_REF_NAME, `v${expected.version}`);
+                  assert.equal(packed.filename, `${expected.name.slice(1).replace('/', '-')}-${expected.version}.tgz`);
+                  assert.equal(createHash('sha256').update(readFileSync(packed.filename)).digest('hex'), expected.sha256);
+                  appendFileSync(process.env.GITHUB_OUTPUT, `archive=${packed.filename}\n`);
+                  NODE
             - name: Configure npm auth
               run: |
                 echo "registry=https://registry.npmjs.org/" > ~/.npmrc
@@ -84,7 +100,12 @@ jobs:
               env:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+            - name: Verify npm publisher account
+              run: npm whoami
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
             - name: Publish to npm
-              run: npm publish --access public --ignore-scripts
+              run: npm publish "${{ steps.artifact.outputs.archive }}" --access public --ignore-scripts
               env:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

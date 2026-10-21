@@ -1,5 +1,7 @@
 # @signalsafe/tree-spec-editor-theme-bootstrap
 
+Current source and planned customer-subdomain impact: [current-state summary](docs/current-release-candidate.md).
+
 CSS-only Bootstrap-token theme for semantic classes emitted by `@signalsafe/tree-spec-editor` and `@signalsafe/tree-spec-editor-react`.
 
 ## Usage
@@ -34,3 +36,20 @@ src/primitives/*.css
 src/shell/*.css
 src/canvas/*.css
 ```
+
+
+The Info property table uses fixed column layout and wraps long identities and
+timestamps within its card, including narrow panels at enlarged text sizes.
+Horizontal cell padding scales down with available table width while preserving
+its existing maximum spacing. Values remain visible; the theme does not truncate
+text or hide overflow to fit.
+
+To run the browser layout regression with an independently installed Playwright
+development tool (no JavaScript runtime is shipped), use
+`node scripts/check-info-layout.mjs /absolute/path/to/playwright/index.mjs /absolute/path/to/installed/theme`.
+
+Choice inspector headers wrap fields and action controls at narrow widths and enlarged text. The Choices panel retains its bounded scroll area. Development browser regression: `node scripts/check-choice-header-layout.mjs /path/to/playwright/index.mjs /path/to/installed/theme [result.json]`.
+
+Card bodies and choice rows cap inline insets at three percent of their containing width on narrow cards; wide layouts keep the existing .75rem maximum. Flush bodies remain uninset.
+
+See the [current release documentation](docs/current-release-candidate.md) for release-specific compatibility and verification boundaries.
