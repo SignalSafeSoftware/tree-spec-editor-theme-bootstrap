@@ -2,7 +2,12 @@
 
 ## [Unreleased]
 
-No unreleased changes recorded.
+## [0.3.8] - 2026-11-15
+
+### Changed
+
+- Reconcile existing choice-inspector spacing, information panels, modal and toolbar styling while retaining upstream responsive wrapping and shared layout-test helpers.
+- Keep the theme CSS-only and compatible with the editor 0.5.0 `EdgesPanel` export migration; no alternate theme or host-specific screen styling is introduced.
 
 ## [0.3.7] - 2026-10-21
 

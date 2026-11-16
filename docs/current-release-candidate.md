@@ -1,11 +1,7 @@
-# Current release: @signalsafe/tree-spec-editor-theme-bootstrap 0.3.7
+# Release candidate: @signalsafe/tree-spec-editor-theme-bootstrap 0.3.8
 
-Status: coordinated release approved on 2026-10-21; registry availability is established by release verification receipts. Existing canonical source and host installations remain unchanged. The candidate combines the installed Step 5 capabilities with the verified package audit fixes; earlier dated state summaries and verification records remain historical evidence.
+The published baseline is 0.3.7. This compatible CSS-only release reconciles existing choice-inspector, modal, information-panel and toolbar spacing changes while preserving current responsive wrapping and the shared browser layout regression helper. It supports semantic classes emitted by editor 0.5.0 and existing compatible editors; the public stylesheet entry is unchanged.
 
-The package README describes supported entry points and behavior; `../RELEASING.md` describes the publication gate and order. Use the committed declaration in `../package.json` as the dependency authority. Candidate source, built files, packed archive, and isolated installed consumer must agree. Check actual gate receipts rather than inferring completion from this document.
+The normal packed stylesheet, smoke check and browser layout checks must pass at narrow and wide widths, including enlarged text. The actual host remains responsible for its surrounding page layout. No JavaScript runtime, host dependency, Bootstrap JavaScript or new theme is added.
 
-TreeSpec `0.4.4` precedes editor-core `0.2.3`, editor-react `0.3.3`, editor `0.4.1` and theme `0.3.7`. Before publication, local archive proof verifies this chain without pretending unpublished versions can pass a frozen registry install. Registry lock refresh and published-dependency smoke verification remain staged until the upstream versions exist. React 18 / React Flow 11 support is retained.
-
-## Review record
-
-The canonical repository is preserved. Candidate changes are reviewed as a source delta over the verified remote baseline; frozen registry lock regeneration and final hosted checks remain separately recorded gates. Local passing tests do not establish production cutover or provider readiness.
+Source reconciliation preserves original dirty work separately and retains stronger upstream checks. Existing CI verifies the exact `release-artifact.json` digest on an immutable matching `v*` tag before registry publication. See [release instructions](../RELEASING.md). Candidate metadata alone does not imply registry publication or host adoption.
