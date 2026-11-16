@@ -38,3 +38,54 @@
     width: 38%;
     border-right: var(--graph-editor-border-width) solid var(--graph-editor-border-subtle);
 }
+
+/* Bootstrap-style information tabs, separate from the collapsible content. */
+.graph-editor-info {
+    min-width: 0;
+}
+.graph-editor-info > .graph-editor-card__body {
+    border: var(--graph-editor-border-width) solid var(--graph-editor-border);
+    border-top: 0;
+    border-radius: 0 0 var(--graph-editor-radius) var(--graph-editor-radius);
+}
+.graph-editor-info-tabs {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: var(--graph-editor-border-width) solid var(--graph-editor-border);
+}
+.graph-editor-info-tablist {
+    flex-wrap: wrap;
+    min-width: 0;
+    margin-bottom: calc(-1 * var(--graph-editor-border-width));
+}
+.graph-editor-info-tab {
+    padding: 0.5rem 1rem;
+    border: var(--graph-editor-border-width) solid transparent;
+    border-top-left-radius: var(--graph-editor-radius);
+    border-top-right-radius: var(--graph-editor-radius);
+    background: transparent;
+    color: var(--graph-editor-accent);
+    font: inherit;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.graph-editor-info-tab:hover {
+    border-color: var(--graph-editor-border-subtle) var(--graph-editor-border-subtle) var(--graph-editor-border);
+}
+.graph-editor-info-tab[aria-selected="true"] {
+    color: var(--graph-editor-text);
+    background: var(--graph-editor-bg);
+    border-color: var(--graph-editor-border) var(--graph-editor-border) var(--graph-editor-bg);
+}
+.graph-editor-info-tab:focus-visible {
+    outline: 2px solid var(--graph-editor-accent);
+    outline-offset: -3px;
+}
+.graph-editor-info-tabs > button {
+    flex-shrink: 0;
+    align-self: center;
+    margin-inline-start: auto;
+    margin-block: 0.25rem;
+}
