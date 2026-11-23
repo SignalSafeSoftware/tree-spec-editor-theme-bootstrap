@@ -6,17 +6,24 @@ import { pathToFileURL } from 'node:url';
 async function styles(filename) {
     const source = await readFile(filename, 'utf8');
     const imports = [...source.matchAll(/@import\s+['"]([^'"]+)['"];?/g)];
-    let result = source;
-    for (const match of imports) {
-        result = result.replace(match[0], await styles(path.resolve(path.dirname(filename), match[1])));
-    }
-    return result;
+    return imports.reduce(
+        (pending, match) =>
+            pending.then(async (result) =>
+                result.replace(
+                    match[0],
+                    await styles(path.resolve(path.dirname(filename), match[1])),
+                ),
+            ),
+        Promise.resolve(source),
+    );
 }
 
 export async function browserLayout(scriptName) {
     const [playwrightPath, packagePath, outputPath] = process.argv.slice(2);
     if (!playwrightPath || !packagePath) {
-        throw new Error(`Usage: node scripts/${scriptName} /path/to/playwright/index.mjs /path/to/installed/theme [result.json]`);
+        throw new Error(
+            `Usage: node scripts/${scriptName} /path/to/playwright/index.mjs /path/to/installed/theme [result.json]`,
+        );
     }
     const { chromium } = await import(pathToFileURL(path.resolve(playwrightPath)).href);
     const css = await styles(path.resolve(packagePath, 'styles.css'));

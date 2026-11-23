@@ -29,6 +29,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
+            - name: Verify all development scripts with full coverage
+              run: npm run test:coverage
+
             - name: Smoke-test package files
               run: npm run smoke:package
 
