@@ -1,9 +1,8 @@
 /** Browser-only development regression. Uses a supplied Playwright installation. */
 import assert from 'node:assert/strict';
-import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { browserLayout } from './browser-layout.mjs';
+import { checkBrowserCases } from './browser-layout.mjs';
 
 async function inspectCase(page, css, { width, fontSize, status }) {
     await page.setViewportSize({ width, height: 1000 });
@@ -58,29 +57,10 @@ async function inspectCase(page, css, { width, fontSize, status }) {
 }
 
 export async function checkInfoLayout() {
-    const { browser, page, css, outputPath } = await browserLayout('check-info-layout.mjs');
-    try {
-        const cases = [320, 430, 1280].flatMap((width) =>
-            [16, 32].flatMap((fontSize) =>
-                ['Draft', 'Published'].map((status) => ({ width, fontSize, status })),
-            ),
-        );
-        // Each case mutates the same page; preserve ordered, failure-short-circuiting execution.
-        const results = await cases.reduce(
-            (pending, scenario) =>
-                pending.then(async (previous) => [
-                    ...previous,
-                    await inspectCase(page, css, scenario),
-                ]),
-            Promise.resolve([]),
-        );
-        if (outputPath) await writeFile(outputPath, JSON.stringify(results, null, 2) + '\n');
-        console.log(
-            `Info table containment and full-text checks pass: ${results.length} packed-theme cases.`,
-        );
-    } finally {
-        await browser.close();
-    }
+    const cases = [320, 430, 1280].flatMap((width) =>
+        [16, 32].flatMap((fontSize) => ['Draft', 'Published'].map((status) => ({ width, fontSize, status }))),
+    );
+    await checkBrowserCases('check-info-layout.mjs', cases, inspectCase, 'Info table containment and full-text checks pass');
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

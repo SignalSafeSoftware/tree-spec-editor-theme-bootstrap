@@ -1,9 +1,8 @@
 /** Browser-only development regression. Uses a supplied Playwright installation. */
 import assert from 'node:assert/strict';
-import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { browserLayout } from './browser-layout.mjs';
+import { checkBrowserCases } from './browser-layout.mjs';
 
 async function inspectCase(page, css, { width, fontSize, disabled }) {
     await page.setViewportSize({ width, height: 1000 });
@@ -32,8 +31,8 @@ async function inspectCase(page, css, { width, fontSize, disabled }) {
             // Reserve native dropdown indicator space in addition to both declared paddings.
             const available =
                 select.clientWidth -
-                parseFloat(style.paddingLeft) -
-                parseFloat(style.paddingRight) -
+                Number.parseFloat(style.paddingLeft) -
+                Number.parseFloat(style.paddingRight) -
                 (select.getAttribute('aria-label') === 'Appearance wrap' ? 0 : 20);
             controls.push({
                 label: select.getAttribute('aria-label'),
@@ -95,31 +94,10 @@ async function inspectCase(page, css, { width, fontSize, disabled }) {
 }
 
 export async function checkChoiceHeaderLayout() {
-    const { browser, page, css, outputPath } = await browserLayout(
-        'check-choice-header-layout.mjs',
+    const cases = [320, 430, 1280].flatMap((width) =>
+        [16, 32].flatMap((fontSize) => [false, true].map((disabled) => ({ width, fontSize, disabled }))),
     );
-    try {
-        const cases = [320, 430, 1280].flatMap((width) =>
-            [16, 32].flatMap((fontSize) =>
-                [false, true].map((disabled) => ({ width, fontSize, disabled })),
-            ),
-        );
-        // Each case mutates the same page; preserve ordered, failure-short-circuiting execution.
-        const results = await cases.reduce(
-            (pending, scenario) =>
-                pending.then(async (previous) => [
-                    ...previous,
-                    await inspectCase(page, css, scenario),
-                ]),
-            Promise.resolve([]),
-        );
-        if (outputPath) await writeFile(outputPath, JSON.stringify(results, null, 2) + '\n');
-        console.log(
-            `Choice header value, label and scroll reachability checks pass: ${results.length} packed-theme cases.`,
-        );
-    } finally {
-        await browser.close();
-    }
+    await checkBrowserCases('check-choice-header-layout.mjs', cases, inspectCase, 'Choice header value, label and scroll reachability checks pass');
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

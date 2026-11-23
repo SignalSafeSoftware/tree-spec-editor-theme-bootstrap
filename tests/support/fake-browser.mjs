@@ -3,7 +3,8 @@
  */
 const key = Symbol.for('tree-theme-browser-test-state');
 export function state() {
-    return (globalThis[key] ??= { width: 320, fontSize: 16, fault: '', events: [], closed: 0 });
+    globalThis[key] ??= { width: 320, fontSize: 16, fault: '', events: [], closed: 0 };
+    return globalThis[key];
 }
 
 function element(name, { label = null, width = 200, scrollWidth = width, parent = null } = {}) {
@@ -78,12 +79,14 @@ function installDocument() {
                     selected = node;
                 },
                 getClientRects() {
-                    return (s.fault === 'label-overlap' && selected === label) ||
-                        (s.fault === 'cell-text' && selected === cell)
-                        ? [{ left: -10, right: 300 }]
-                        : s.fault === 'cell-text-right' && selected === cell
-                          ? [{ left: 0, right: 300 }]
-                          : [];
+                    if ((s.fault === 'label-overlap' && selected === label) ||
+                        (s.fault === 'cell-text' && selected === cell)) {
+                        return [{ left: -10, right: 300 }];
+                    }
+                    if (s.fault === 'cell-text-right' && selected === cell) {
+                        return [{ left: 0, right: 300 }];
+                    }
+                    return [];
                 },
             };
         },

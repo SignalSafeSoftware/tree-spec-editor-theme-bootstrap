@@ -1,5 +1,5 @@
 /** Shared setup for the packed-theme browser layout regressions. */
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -34,5 +34,22 @@ export async function browserLayout(scriptName) {
     } catch (error) {
         await browser.close();
         throw error;
+    }
+}
+
+/** Cases share a mutable page, so execute them serially and always close its browser. */
+export async function checkBrowserCases(scriptName, cases, inspectCase, description) {
+    const { browser, page, css, outputPath } = await browserLayout(scriptName);
+    try {
+        const results = await cases.reduce(
+            (pending, scenario) => pending.then(async (previous) => [
+                ...previous, await inspectCase(page, css, scenario),
+            ]),
+            Promise.resolve([]),
+        );
+        if (outputPath) await writeFile(outputPath, JSON.stringify(results, null, 2) + '\n');
+        console.log(`${description}: ${results.length} packed-theme cases.`);
+    } finally {
+        await browser.close();
     }
 }
