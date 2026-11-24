@@ -1,6 +1,6 @@
 {
     "name": "@signalsafe/tree-spec-editor-theme-bootstrap",
-    "version": "0.3.8",
+    "version": "0.3.9",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/SignalSafeSoftware/tree-spec-editor-theme-bootstrap.git"
