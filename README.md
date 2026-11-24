@@ -1,5 +1,10 @@
 # @signalsafe/tree-spec-editor-theme-bootstrap
 
+[![Build](https://github.com/SignalSafeSoftware/tree-spec-editor-theme-bootstrap/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/SignalSafeSoftware/tree-spec-editor-theme-bootstrap/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/@signalsafe/tree-spec-editor-theme-bootstrap?logo=npm)](https://www.npmjs.com/package/@signalsafe/tree-spec-editor-theme-bootstrap)
+[![npm downloads per month](https://img.shields.io/npm/dm/@signalsafe/tree-spec-editor-theme-bootstrap?label=downloads%2Fmonth)](https://www.npmjs.com/package/@signalsafe/tree-spec-editor-theme-bootstrap)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/SignalSafeSoftware/tree-spec-editor-theme-bootstrap/blob/main/LICENSE)
+
 Current source and planned customer-subdomain impact: [current-state summary](docs/current-release-candidate.md).
 
 CSS-only Bootstrap-token theme for semantic classes emitted by `@signalsafe/tree-spec-editor` and `@signalsafe/tree-spec-editor-react`.
