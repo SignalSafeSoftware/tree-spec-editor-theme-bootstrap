@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.9 — 2026-11-23
+
+- Publish npm releases through GitHub Actions OIDC trusted publishing.
+- Document the designated publisher, validation and token retirement process.
+
 ## [Unreleased]
 
 ## [0.3.8] - 2026-11-15
